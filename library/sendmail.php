@@ -1,6 +1,5 @@
 <?php
-	session_start();
-  
+	session_start(); 
 	//añadirle tu dirección de correo electrónico aquí
 	define("MY_EMAIL", "info@simbitgt.com");
 
@@ -33,7 +32,7 @@
   if (!$securimage->check($_POST['captcha_code'])) {
     errorResponse('Código de Seguridad no válido');
   }
-	
+
   //tratar de enviar el mensaje usando la funcion mail de php
   if(mail(MY_EMAIL, $_POST['reason'], setMessageBody($_POST["name"], $message), "From: $email")) {
     echo json_encode(array('message' => 'Su mensaje se ha enviado correctamente.'));

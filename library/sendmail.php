@@ -2,7 +2,7 @@
 	session_start();
   
 	//añadirle tu dirección de correo electrónico aquí
-	define("MY_EMAIL", "info@simbitgt.com");
+	define("MY_EMAIL", "daytongarcia@gmail.com");
 
   /**
    * Establece la cabecera de error y la respuesta de mensaje de error JSON.

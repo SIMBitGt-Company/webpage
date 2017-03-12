@@ -185,74 +185,64 @@
 
 	<a  name="contact"></a>
     <div class="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="centerForm">
-                        <div class="container">
-                        <h2>Contactanos</h2>
-                        <BR>
-                        <form class="form-horizontal" role="form">
-                          <div class="form-group">
-                            <label class="control-label col-sm-2" for="email">Email:</label>
-                            <div class="col-xs-4">
-                              <input type="email" class="form-control" id="email" placeholder="Ingrese su email">
-                            </div>      
-                          </div>
-                          <div class="form-group">
-                            <label class="control-label col-sm-2" for="tel">Telefono:</label>
-                            <div class="col-xs-4">
-                              <input type="tel" class="form-control" id="tel" pattern="[0-9]{9}" placeholder="Ingrese su telefono (opcional)">
-                            </div>      
-                          </div>
-                          <div class="form-group">
-                            <label class="control-label col-sm-2" for="email">Comentario:</label>
-                            <div class="col-xs-4">
-                              <textarea class="form-control" rows="5" id="comment"></textarea>
-                            </div>      
-                          </div>
-                        
-                          <div class="form-group">        
-                            <div class="col-sm-offset-2 col-sm-10">
-                              <button type="submit" class="btn btn-default">Enviar</button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-xs-6 col-md-4">
-                           
-                        </div>
-                            <div class="col-xs-6 col-md-4">
-                                <a href="https://twitter.com/Dytong" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                            </div>
-                            <div class="col-xs-6 col-md-4">
-                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
-                                <div class="contact-tel">
-                                    <h4>Telefonos:</h4>
-                                    <p><img class="img-responsive" src="img/gt.png" align="left" alt="">  +(502) 51115771</p>
-                                    <p><img class="img-responsive" src="img/gt.png" align="left" alt="">  +(502) 51831769</p>
-			            <p><img class="img-responsive" src="img/gt.png" align="left" alt="">  +(502) 56989013</p>
-                                    <h4>Correo</h4>
-                                    <p><i class="fa fa-envelope" aria-hidden="true"></i>  info@simbitgt.com</p>
-                            </div>
-                            </div>
-                            <!--<ul class="list-inline banner-social-buttons">
-                                <li>
-                                    
-                                </li>
-                                <li>
-                                    <a href="https://facebook.com/dayton.garcia" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
-                                </li>
-                            </ul>   -->
-                    </div>
-                </div>
+        
+        <!-- EXTRACT FORM HERE =======> -->
+    <div class="container">
+      <div id="contact_form" class="row">
+        <div class="col-md-12">
+          <h2>Contáctenos</h2>
+          <form role="form" id="feedbackForm">
+            <div class="form-group">
+              <label class="control-label" for="name">Nombres *</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Introduzca su nombre" />
+                <span class="input-group-addon"><i class="glyphicon glyphicon-unchecked form-control-feedback"></i></span>
+              </div>
+              <span class="help-block" style="display: none;">Por favor, escriba su nombre.</span>
             </div>
-
-        </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="email">Motivo de Contacto*</label>
+              <select name="reason" class="form-control">
+                <option value="Consulta General">Consulta General</option>
+                <option value="Realizar Pedido">Realizar Pedido</option>
+                <option value="Informe un problema">Informe un problema</option>
+              </select>
+              <span class="help-block" style="display: none;">Por favor, introduce una dirección de correo electrónico válida.</span>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="email">Dirección de Correo Electrónico *</label>
+              <div class="input-group">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Introduzca su correo electrónico" />
+                <span class="input-group-addon"><i class="glyphicon glyphicon-unchecked form-control-feedback"></i></span>
+              </div>
+              <span class="help-block" style="display: none;">Por favor, introduzca una dirección de correo electrónico válida.</span>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="message">Mensaje *</label>
+              <div class="input-group">
+                <textarea rows="5" cols="30" class="form-control" id="message" name="message" placeholder="Introduzca su mensaje" ></textarea>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-unchecked form-control-feedback"></i></span>
+              </div>
+              <span class="help-block" style="display: none;">Por favor, introduzca un mensaje.</span>
+            </div>
+            <img id="captcha" src="library/vender/securimage/securimage_show.php" alt="CAPTCHA Image" />
+            <a href="#" onclick="document.getElementById('captcha').src = 'library/vender/securimage/securimage_show.php?' + Math.random(); return false" class="btn btn-info btn-sm">Mostrar una imagen diferente</a><br/>
+            <div class="form-group" style="margin-top: 10px;">
+              <label class="control-label" for="captcha_code">Texto dentro de la Imagen *</label>
+              <div class="input-group">
+                <input type="text" class="form-control" name="captcha_code" id="captcha_code" placeholder="Por razones de seguridad, por favor ingrese el código que aparece en el cuadro." />
+                <span class="input-group-addon"><i class="glyphicon glyphicon-unchecked form-control-feedback"></i></span>
+              </div>
+              <span class="help-block" style="display: none;">Por favor introduce el código que aparece en la imagen.</span>
+            </div>
+            <span class="help-block" style="display: none;">Por favor ingrese el código de la seguridad.</span>
+            <button type="submit" id="feedbackSubmit" class="btn btn-primary btn-lg" data-loading-text="Enviando..." style="display: block; margin-top: 10px;">Enviar comentarios</button>
+          </form>
+        </div><!--/span-->
+      </div><!--/row-->
+      <hr>
+    </div>
 
         <!-- /.container -->
 
@@ -294,7 +284,11 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="assets/vender/intl-tel-input/js/intlTelInput.min.js"></script>
+    <script src="assets/js/contact-form.js"></script>
+    
 </body>
 
 </html>

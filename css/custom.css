@@ -29,6 +29,7 @@
     background: rgba(90, 88, 88, 1);
     border: 7px solid rgba(90, 88, 88, 1);
     color: white;
+    cursor: pointer;
 }
 /*--- hacer todas las row del mismo tamaño para evitar desplazamientos */
 .row {
